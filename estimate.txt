@@ -1,0 +1,13 @@
+
+The Multi-AZ, multi-region database offers robust resilience and recovery capabilities, ensuring minimal downtime and data loss in the face of various failure scenarios.
+In the event of a single Availability Zone (AZ) outage, the database automatically fails over to another AZ within the same region, resulting in a relatively low Recovery Time Objective (RTO) of a few minutes. Moreover, the database's replication across multiple regions provides additional redundancy.
+In the case of a complete region outage, the RTO may be longer, ranging from minutes to a few hours, as it involves redirecting traffic, provisioning resources, and syncing data in the secondary region. However, even in this scenario, the RTO is kept relatively low. 
+The database's synchronous replication between AZs ensures a virtually zero Recovery Point Objective (RPO) for a single AZ outage, minimizing data loss. 
+In the case of a single region outage, where data replication is asynchronous, the achievable minimum RPO ranges from seconds to minutes, depending on replication lag and data update frequency. 
+These capabilities make the Multi-AZ, multi-region database a resilient and reliable solution for maintaining continuous availability and data integrity.
+
+aws ec2-instance-connect send-ssh-public-key --instance-id i-0fb65fa6f36fb55a2 --availability-zone us-east-1 --instance-os-user ec2-user --ssh-public-key ~/Downloads/udacity-cloud.pem
+mysql -h \c  -P 3306 -u admin -p
+sudo apt install mysql-server
+sudo dnf update -y
+sudo dnf install mariadb105-server
